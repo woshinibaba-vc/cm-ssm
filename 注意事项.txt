@@ -1,0 +1,1 @@
+需要在   D:\IDEA\IdeaProjects\uplode  路径下创建face文件夹   并且需要把face添加到tomcat中
