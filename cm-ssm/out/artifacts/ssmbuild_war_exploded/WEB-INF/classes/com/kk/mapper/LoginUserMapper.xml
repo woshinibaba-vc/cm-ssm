@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.LoginUserMapper">
+
+  <resultMap id="BaseResultMap" type="com.kk.pojo.LoginUser">
+    <id column="l_id" jdbcType="INTEGER" property="lId" />
+    <result column="l_name" jdbcType="CHAR" property="lName" />
+    <result column="l_pwd" jdbcType="VARCHAR" property="lPwd" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from loginuser
+    where l_id = #{lId,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="com.kk.pojo.LoginUser">
+    insert into loginuser (l_id, l_name, l_pwd
+      )
+    values (#{lId,jdbcType=INTEGER}, #{lName,jdbcType=CHAR}, #{lPwd,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.kk.pojo.LoginUser">
+    update loginuser
+    set l_name = #{lName,jdbcType=CHAR},
+      l_pwd = #{lPwd,jdbcType=VARCHAR}
+    where l_id = #{lId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select l_id, l_name, l_pwd
+    from loginuser
+    where l_id = #{lId,jdbcType=INTEGER}
+  </select>
+  <!--根据用户名查询登录用户-->
+  <select id="selectgetUserByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select l_id, l_name, l_pwd
+    from loginuser
+    where l_name = #{l_name}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select l_id, l_name, l_pwd
+    from loginuser
+  </select>
+</mapper>

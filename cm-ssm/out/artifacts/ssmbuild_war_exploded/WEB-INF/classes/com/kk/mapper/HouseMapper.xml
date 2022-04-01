@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.HouseMapper">
+  <resultMap id="BaseResultMap" type="com.kk.pojo.House">
+    <id column="hId" jdbcType="INTEGER" property="hid" />
+    <result column="hCode" jdbcType="VARCHAR" property="hcode" />
+    <result column="hSite" jdbcType="VARCHAR" property="hsite" />
+    <result column="hArea" jdbcType="INTEGER" property="harea" />
+    <result column="hHeight" jdbcType="INTEGER" property="hheight" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from house
+    where hId = #{hid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kk.pojo.House">
+    insert into house (hId, hCode, hSite, 
+      hArea, hHeight)
+    values (#{hid,jdbcType=INTEGER}, #{hcode,jdbcType=VARCHAR}, #{hsite,jdbcType=VARCHAR}, 
+      #{harea,jdbcType=INTEGER}, #{hheight,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.kk.pojo.House">
+    update house
+    set hCode = #{hcode},
+      hSite = #{hsite},
+      hArea = #{harea},
+      hHeight = #{hheight}
+    where hId = #{hid}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select hId, hCode, hSite, hArea, hHeight
+    from house
+    where hId = #{hid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select hId, hCode, hSite, hArea, hHeight
+    from house
+  </select>
+</mapper>

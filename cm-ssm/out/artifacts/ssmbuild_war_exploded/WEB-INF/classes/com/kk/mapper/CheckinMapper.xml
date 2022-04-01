@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.CheckinMapper">
+  <resultMap id="BaseResultMap" type="com.kk.pojo.Checkin">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="idcord" jdbcType="VARCHAR" property="idcord" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from checkin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.kk.pojo.Checkin">
+    insert into checkin (name,phone,idcord,note)
+    values ( #{name,jdbcType=VARCHAR},#{phone,jdbcType=INTEGER}, #{idcord,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.kk.pojo.Checkin">
+    update checkin
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=TIMESTAMP},
+      idcord = #{idcord,jdbcType=INTEGER},
+      note = #{note,jdbcType=VARCHAR},
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+<!--  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">-->
+<!--    select pId, pCode, pTime, pMoney, pInfo, pStatus, cId, uId-->
+<!--    from payinfo-->
+<!--    where pId = #{pid,jdbcType=INTEGER}-->
+<!--  </select>-->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id,name,phone,time,idcord,note from checkin
+  </select>
+</mapper>
