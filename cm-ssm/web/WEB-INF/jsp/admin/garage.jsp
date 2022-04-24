@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-	<title>维修员信息</title>
+	<title>停车场管理</title>
 	<%@include file="/common/head.jsp" %>
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="${basePath}/resources/vendor/font-awesome/css/font-awesome.min.css">
@@ -55,16 +55,16 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="${basePath}/admin/index" class=""><i class="lnr lnr-home"></i> <span>后台桌面</span></a></li>
-						<li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
-						<li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
-						<li><a href="${basePath}/staff/list" class="active"><i class="lnr lnr-user"></i> <span>维修员信息</span></a></li>
-						<li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i> <span>收费项目</span></a></li>
-						<li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
-                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表
-                    </span></a>
-						<li><a href="${basePath}/repairinfo/list" class=""><i class="lnr lnr-pencil"></i> <span>申请维修信息</span></a></li>
-						<li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
-						<li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
+                        <li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
+                        <li><a href="${basePath}/garage/list" class="active"><i class="lnr lnr-user"></i> <span>停车场管理</span></a></li>
+                        <li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i><span>收费项目</span></a></li>
+                        <li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
+                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表</span></a>
+                        <li><a href="${basePath}/face/list" class=""><i class="lnr lnr-pencil"></i> <span>门禁使用记录</span></a></li>
+                        <li><a href="${basePath}/repairinfo/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
+                        <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区报表</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -78,56 +78,32 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" >修改</h4>
+                <h4 class="modal-title" >添加时长</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" >
                 	<div class="form-group">
-                        <label for="id_update_label" class="col-sm-2 control-label">id</label>
+                        <label for="gid_update_label" class="col-sm-2 control-label">id</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" id="id_update_label" name="sid"></p>
+                            <p class="form-control-static" id="gid_update_label" name="gid"></p>
                             <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="code_update_input" class="col-sm-2 control-label">维修员编号</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="scode" class="form-control" id="code_update_input" placeholder="请输入这位维修员的编号">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                        <label for="name_update_input" class="col-sm-2 control-label">姓名</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="sname" class="form-control" id="name_update_input" placeholder="请输入这位维修员的姓名">
-                                <span class="help-block"></span>
-                            </div>
-                    </div>
-                        <div class="form-group">
-                            <label for="pwd_update_input" class="col-sm-2 control-label">密码</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="spwd" class="form-control" id="pwd_update_input" placeholder="请输入这为维修员的密码">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ddd1" class="col-sm-2 control-label">性别</label>
-                            <div class="col-sm-10" id="ddd1">
-                                男
-                                <input type="radio" checked value="男" name="ssex" >
-                                &nbsp;&nbsp;
-                                女
-                                <input type="radio" name="ssex" value="女">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                    <div class="form-group">
-                        <label for="phone_update_input" class="col-sm-2 control-label">手机</label>
+                        <label for="gcode_update_input" class="col-sm-2 control-label">车牌号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="sphone" class="form-control" id="phone_update_input" placeholder="请输入这为维修员的手机">
+                            <input type="text" name="gcode" class="form-control" id="gcode_update_input" readonly>
                             <span class="help-block"></span>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="gremaining_update_input" class="col-sm-2 control-label">增加时长/天</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="gremaining" class="form-control" id="gremaining_update_input" placeholder="请输入要增加的时长">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+
                 </form>
             </div>
             <div class="modal-footer">
@@ -149,48 +125,16 @@
                 <div class="modal-body">
                     <form class="form-horizontal" >
                         <div class="form-group">
-                            <label for="id_update_label" class="col-sm-2 control-label">id</label>
+                            <label for="gcode_add_input" class="col-sm-2 control-label">车牌号</label>
                             <div class="col-sm-10">
-                                <p class="form-control-static" id="id_add_label" name="sid"></p>
+                                <input type="text" name="gcode" class="form-control" id="gcode_add_input" placeholder="请输入车库时长">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name_update_input" class="col-sm-2 control-label">维修员编号</label>
+                            <label for="gremaining_add_input" class="col-sm-2 control-label">车库时长/天</label>
                             <div class="col-sm-10">
-                                <input type="text" name="scode" class="form-control" id="name_add_input" placeholder="请输入这位维修员的编号">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="address_add_input" class="col-sm-2 control-label">姓名</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="sname" class="form-control" id="address_add_input" placeholder="请输入这位维修员的姓名">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="area_add_input" class="col-sm-2 control-label">密码</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="spwd" class="form-control" id="area_add_input" placeholder="请输入这为维修员的密码">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ddd2" class="col-sm-2 control-label">性别</label>
-                            <div class="col-sm-10" id="ddd2">
-                                男
-                                <input type="radio" checked value="男" name="ssex" >
-                                &nbsp;&nbsp;
-                                女
-                                <input type="radio" name="ssex" value="女">
-                                <span class="help-block"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone_add_input" class="col-sm-2 control-label">电话</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="sphone" class="form-control" id="phone_add_input" placeholder="请输入这为维修员的电话">
+                                <input type="text" name="gremaining" class="form-control" id="gremaining_add_input" placeholder="请输入车库时长">
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -207,7 +151,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-				<h3 class="page-title">维修员列表</h3>
+				<h3 class="page-title">停车场管理</h3>
 					<%--按钮--%>
     <div class="row">
         <div class="col-md-4 col-md-offset-8">
@@ -223,13 +167,11 @@
                     <tr>
                         <th><input type="checkbox" id="all_check_box"/></th>
                         <th>id</th>
-	                    <th>维修员编号</th>
-	                    <th>姓名</th>
-	                    <th>密码</th>
-	                    <th>性别</th>
-	                    <th>电话</th>
-	                    <th>好评率</th>
-	                    <th>操作</th>
+	                    <th>车牌号</th>
+	                    <th>登记入库时间</th>
+	                    <th>剩余时长</th>
+                        <th>到期时间</th>
+                        <th>操作</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -278,7 +220,7 @@
     */
      function to_page(pn) {
         $.ajax({
-            url:"${basePath}/staff/listall",
+            url:"${basePath}/garage/listall",
             data:"pn=" + pn,
             type:"GET",
             success:function (result) {
@@ -302,16 +244,21 @@
 //            jQuery提供的遍历方法,回调函数：索引和每一项信息
         $.each(emps, function (index, item) {
             var checkBox = $("<td></td>").append($("<input type='checkbox' class='check_box'>"));
-            var idTd = $("<td></td>").append(item.sid);
-            var nameTd = $("<td></td>").append(item.scode);
-            var genderTd = $("<td></td>").append(item.sname);
-            var emailTd = $("<td></td>").append(item.spwd);
-            var departmentTd = $("<td></td>").append(item.ssex);
-            var uphone = $("<td></td>").append(item.sphone);
-            var ustarttime = $("<td></td>").append(item.sevaluate);
+            var gid = $("<td></td>").append(item.gid);
+            var gcode = $("<td></td>").append(item.gcode);
+            var gstartTime = $("<td></td>").append(timestampToTime(item.gstartTime));
+
+            //结束时间戳
+            var ptimestamp = item.gstartTime+item.gremaining*24*60*60*1000;
+            var gremaining = $("<td></td>").append((parseInt((ptimestamp-new Date())/(24*60*60*1000))));
+            //结束时间
+            var endTime = $("<td></td>").append(
+                timestampToTime(ptimestamp)
+            );
+
             var editBtn = $("<button></button>").addClass("btn-primary btn-xs")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil"))
-                .append("编辑").click(function () {
+                .append("增加时长").click(function () {
                     editBtnClick(item);
                 });
 
@@ -325,14 +272,13 @@
                 .append(" ")
                 .append(delBtn);
             var tr = $("<tr></tr>").append(checkBox)
-                .append(idTd)
-                .append(nameTd)
-                .append(genderTd)
-                .append(emailTd)
-                .append(departmentTd)
-                .append(uphone)
-                .append(ustarttime)
+                .append(gid)
+                .append(gcode)
+                .append(gstartTime)
+                .append(gremaining)
+                .append(endTime)
                 .append(btnTd);
+
             $("#emps_table tbody").append(tr);
         });
     }
@@ -351,9 +297,9 @@
      * 单行删除按钮被按下
     */
     function deleteOneBtnClick(employee) {
-        if (confirm("确认删除【"+employee.scode+"】的信息吗")) {
+        if (confirm("确认删除【"+employee.gcode+"】的信息吗")) {
             $.ajax({
-                url:"${basePath}/staff/del/" + employee.sid,
+                url:"${basePath}/garage/del/" + employee.gid,
                 type:"DELETE",
                 success:function (result) {
                     success_prompt("删除成功");
@@ -366,15 +312,13 @@
     // 编辑按钮 按下
     function editBtnClick(staff) {
         // 将当前信息添加到模态框中
-        $("#id_update_label").text(staff.sid);
-        $("#code_update_input").val(staff.scode);
-        $("#name_update_input").val(staff.sname);
-        $("#pwd_update_input").val(staff.spwd);
-        $("#sex_update_input").val(staff.ssex);
-        $("#phone_update_input").val(staff.sphone);
-        $("[value="+staff.ssex+"]").prop("checked",true);
+        $("#gid_update_label").text(staff.gid);
+        $("#gcode_update_input").val(staff.gcode);
+
+        $("#gremaining_update_input").val(0);
+
         // 将ID保存至更新按钮中
-        $("#update_save_button").attr("sid", staff.sid);
+        $("#update_save_button").attr("gid", staff.gid);
         // 弹出模态对话框
         $("#empUpdateModal").modal({
             backdrop:"static"
@@ -471,7 +415,7 @@
         });
         if ("" != (allName) && confirm("确定要删除【" + allName + "】的信息吗")) {
             $.ajax({
-                url:"${basePath}/staff/del/" + allId,
+                url:"${basePath}/garage/del/" + allId,
                 type:"DELETE",
                 success:function() {
                     success_prompt("删除成功");
@@ -539,7 +483,7 @@
      */
     $("#add_save_button").click(function(){
         $.ajax({
-            url:"${basePath}/staff/save",
+            url:"${basePath}/garage/save",
             method:"POST",
             // 序列化的表单数据，通过jQuery的serialize方法
             data:$("#empAddModal form").serialize(),
@@ -561,9 +505,9 @@
     $("#update_save_button").click(function () {
         // 直接使用ajax发送PUT请求会导致TomCat绑定数据失败，因为TomCat不会处理PUT请求，这个时候Spring提供了一种解决方法，
         // 配置httpPutFormContentFilter过滤器，将PUT请求中的数据包装成一个新的REquest
-        var sid = $(this).attr("sid");
+        var gid = $(this).attr("gid");
         $.ajax({
-           url:"${basePath}/staff/update/" + sid,
+           url:"${basePath}/garage/update/" + gid,
             type:"PUT",
             data:$("#empUpdateModal form").serialize(),
             success:function (result) {
@@ -620,6 +564,18 @@
     {
         prompt(message, 'alert-danger', time);
     };
+
+    //将时间戳转换为标准化时间格式
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '-';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        D = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate()) + ' ';
+        h = (date.getHours() < 10 ? '0'+date.getHours() : date.getHours()) + ':';
+        m = (date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()) + ':';
+        s = date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds();
+        return Y+M+D+h+m+s;
+    }
 	</script>
 </body>
 

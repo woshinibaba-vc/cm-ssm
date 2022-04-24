@@ -75,8 +75,8 @@ public class UploadImg {
 		return "admin/myworld";
 	}
 	
-	@RequestMapping("/dologin")
-	public String doLogin(@RequestParam(value="name",required=true)String uname, Model model) {
-		return "redirect:/index.jsp";
-	}
+//	@RequestMapping("/dologin")
+//	public String doLogin(@RequestParam(value="name",required=true)String uname, Model model) {
+//		return "redirect:/index.jsp";
+//	}
 }

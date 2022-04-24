@@ -16,24 +16,16 @@
     where pId = #{pid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.kk.pojo.Payinfo">
-    insert into payinfo (pId, pCode, pTime, 
-      pMoney, pInfo, pStatus, 
-      cId, uId)
-    values (#{pid,jdbcType=INTEGER}, #{pcode,jdbcType=VARCHAR}, #{ptime,jdbcType=TIMESTAMP}, 
-      #{pmoney,jdbcType=INTEGER}, #{pinfo,jdbcType=VARCHAR}, #{pstatus,jdbcType=VARCHAR}, 
-      #{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER})
+    insert into payinfo (pCode, pTime,pMoney, pInfo,cId, uId)
+    values (#{pcode},#{ptime},#{pmoney},#{pinfo},#{cid},#{uid})
   </insert>
+
   <update id="updateByPrimaryKey" parameterType="com.kk.pojo.Payinfo">
     update payinfo
-    set pCode = #{pcode,jdbcType=VARCHAR},
-      pTime = #{ptime,jdbcType=TIMESTAMP},
-      pMoney = #{pmoney,jdbcType=INTEGER},
-      pInfo = #{pinfo,jdbcType=VARCHAR},
-      pStatus = #{pstatus,jdbcType=VARCHAR},
-      cId = #{cid,jdbcType=INTEGER},
-      uId = #{uid,jdbcType=INTEGER}
-    where pId = #{pid,jdbcType=INTEGER}
+    set pCode = #{pcode},pMoney = #{pmoney},pInfo = #{pinfo},pStatus = #{pstatus}
+    where pId = #{pid}
   </update>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select pId, pCode, pTime, pMoney, pInfo, pStatus, cId, uId
     from payinfo

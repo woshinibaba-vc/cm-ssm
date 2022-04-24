@@ -6,16 +6,15 @@
 <head>
 	<title>小区动态信息</title>
 	<%@include file="/common/head.jsp" %>
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="${basePath}/resources/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="${basePath}/resources/vendor/linearicons/style.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="${basePath}/resources/vendor/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="${basePath}/resources/vendor/css/demo.css">
-	<!-- GOOGLE FONTS -->
-
-	    <link rel="stylesheet" href="${basePath}/resources/app/css/layui.css">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="${basePath}/resources/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${basePath}/resources/vendor/linearicons/style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="${basePath}/resources/vendor/css/main.css">
+    <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+    <link rel="stylesheet" href="${basePath}/resources/vendor/css/demo.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 </head>
 
 <body>
@@ -30,45 +29,10 @@
                 <div class="navbar-btn">
                     <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
                 </div>
-                <%--            <form class="navbar-form navbar-left">--%>
-                <%--                <div class="input-group">--%>
-                <%--                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">--%>
-                <%--                    <span class="input-group-btn"><button type="button" class="btn btn-primary">搜索</button></span>--%>
-                <%--                </div>--%>
-                <%--            </form>--%>
 
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <%--                    <li class="dropdown">--%>
-                        <%--                        <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">--%>
-                        <%--                            <i class="lnr lnr-alarm"></i>--%>
-                        <%--                            <span class="badge bg-danger">5</span>--%>
-                        <%--                        </a>--%>
-                        <%--                        <ul class="dropdown-menu notifications">--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space--%>
-                        <%--                                is almost full</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9--%>
-                        <%--                                unfinished tasks</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report--%>
-                        <%--                                is available</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting--%>
-                        <%--                                in 1 hour</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request--%>
-                        <%--                                has been approved</a></li>--%>
-                        <%--                            <li><a href="#" class="more">See all notifications</a></li>--%>
-                        <%--                        </ul>--%>
-                        <%--                    </li>--%>
-                        <%--                    <li class="dropdown">--%>
-                        <%--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i--%>
-                        <%--                                class="lnr lnr-question-circle"></i> <span>帮助</span> <i--%>
-                        <%--                                class="icon-submenu lnr lnr-chevron-down"></i></a>--%>
-                        <%--                        <ul class="dropdown-menu">--%>
-                        <%--                            <li><a href="#">基本用法</a></li>--%>
-                        <%--                            &lt;%&ndash;<li><a href="#">Working With Data</a></li>--%>
-                        <%--                            <li><a href="#">Security</a></li>--%>
-                        <%--                            <li><a href="#">Troubleshooting</a></li>&ndash;%&gt;--%>
-                        <%--                        </ul>--%>
-                        <%--                    </li>--%>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="" id="myhead" height="22px" class="img-circle">
                                 <span>${admin.aname}</span>
@@ -96,16 +60,16 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="${basePath}/admin/index" class=""><i class="lnr lnr-home"></i> <span>后台桌面</span></a></li>
-						<li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
-						<li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
-						<li><a href="${basePath}/staff/list" class=""><i class="lnr lnr-user"></i> <span>维修员信息</span></a></li>
-						<li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i> <span>收费项目</span></a></li>
-						<li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
-                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表
-                    </span></a>
-						<li><a href="${basePath}/repairinfo/list" class=""><i class="lnr lnr-pencil"></i> <span>申请维修信息</span></a></li>
-						<li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
-						<li><a href="${basePath}/moving/list" class="active"><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
+                        <li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
+                        <li><a href="${basePath}/garage/list" class=""><i class="lnr lnr-user"></i> <span>停车场管理</span></a></li>
+                        <li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i><span>收费项目</span></a></li>
+                        <li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
+                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表</span></a>
+                        <li><a href="${basePath}/face/list" class=""><i class="lnr lnr-pencil"></i> <span>门禁使用记录</span></a></li>
+                        <li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
+                        <li><a href="${basePath}/moving/list" class="active"><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区报表</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -216,7 +180,7 @@
             </div>
         </div>
     </div>
-			
+
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
@@ -248,8 +212,8 @@
 
         </div>
     </div>
-				            
-					
+
+
 				</div>
 	<%--分页条--%>
     <div class="row">
@@ -264,18 +228,15 @@
         </div>
     </div>
 			</div>
-			
+
 			<!-- END MAIN CONTENT -->
 		</div>
-	
+
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
-		
+
 		<footer>
-			
-			<div class="container-fluid">
-				<p class="copyright">Copyright &copy; 2019.</p>
-			</div>
+
 		</footer>
 	</div>
 	<!-- END WRAPPER -->
@@ -358,8 +319,8 @@
 
             }
         });
-        
-	
+
+
     }
      function timestampToTime(timestamp) {
          var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
@@ -384,8 +345,8 @@
 
 //            jQuery提供的遍历方法,回调函数：索引和每一项信息
         $.each(emps, function (index, item) {
-        	
-        	
+
+
             var checkBox = $("<td></td>").append($("<input type='checkbox' class='check_box'>"));
             var idTd = $("<td></td>").append(item.mId);
             var time = timestampToTime(item.mTime);

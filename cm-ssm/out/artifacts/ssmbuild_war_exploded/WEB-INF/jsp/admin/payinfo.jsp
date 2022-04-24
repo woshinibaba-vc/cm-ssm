@@ -30,45 +30,11 @@
                 <div class="navbar-btn">
                     <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
                 </div>
-                <%--            <form class="navbar-form navbar-left">--%>
-                <%--                <div class="input-group">--%>
-                <%--                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">--%>
-                <%--                    <span class="input-group-btn"><button type="button" class="btn btn-primary">搜索</button></span>--%>
-                <%--                </div>--%>
-                <%--            </form>--%>
+
 
                 <div id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
-                        <%--                    <li class="dropdown">--%>
-                        <%--                        <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">--%>
-                        <%--                            <i class="lnr lnr-alarm"></i>--%>
-                        <%--                            <span class="badge bg-danger">5</span>--%>
-                        <%--                        </a>--%>
-                        <%--                        <ul class="dropdown-menu notifications">--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space--%>
-                        <%--                                is almost full</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9--%>
-                        <%--                                unfinished tasks</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report--%>
-                        <%--                                is available</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting--%>
-                        <%--                                in 1 hour</a></li>--%>
-                        <%--                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request--%>
-                        <%--                                has been approved</a></li>--%>
-                        <%--                            <li><a href="#" class="more">See all notifications</a></li>--%>
-                        <%--                        </ul>--%>
-                        <%--                    </li>--%>
-                        <%--                    <li class="dropdown">--%>
-                        <%--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i--%>
-                        <%--                                class="lnr lnr-question-circle"></i> <span>帮助</span> <i--%>
-                        <%--                                class="icon-submenu lnr lnr-chevron-down"></i></a>--%>
-                        <%--                        <ul class="dropdown-menu">--%>
-                        <%--                            <li><a href="#">基本用法</a></li>--%>
-                        <%--                            &lt;%&ndash;<li><a href="#">Working With Data</a></li>--%>
-                        <%--                            <li><a href="#">Security</a></li>--%>
-                        <%--                            <li><a href="#">Troubleshooting</a></li>&ndash;%&gt;--%>
-                        <%--                        </ul>--%>
-                        <%--                    </li>--%>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="" id="myhead" height="22px" class="img-circle">
                                 <span>${admin.aname}</span>
@@ -96,16 +62,16 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="${basePath}/admin/index" class=""><i class="lnr lnr-home"></i> <span>后台桌面</span></a></li>
-						<li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
-						<li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
-						<li><a href="${basePath}/staff/list" class=""><i class="lnr lnr-user"></i> <span>维修员信息</span></a></li>
-						<li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i> <span>收费项目</span></a></li>
-						<li><a href="${basePath}/payinfo/list" class="active"><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
-                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>进门登记列表
-                    </span></a>
-						<li><a href="${basePath}/repairinfo/list" class=""><i class="lnr lnr-pencil"></i> <span>申请维修信息</span></a></li>
-						<li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
-						<li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/house/list" class=""><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
+                        <li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
+                        <li><a href="${basePath}/garage/list" class=""><i class="lnr lnr-user"></i> <span>停车场管理</span></a></li>
+                        <li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i><span>收费项目</span></a></li>
+                        <li><a href="${basePath}/payinfo/list" class="active"><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
+                        <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表</span></a>
+                        <li><a href="${basePath}/face/list" class=""><i class="lnr lnr-pencil"></i> <span>门禁使用记录</span></a></li>
+                        <li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
+                        <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                        <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区报表</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -114,55 +80,56 @@
 		<!-- MAIN -->
 		<div class="main">
 			<!-- 员工修改模态框 -->
-<div class="modal fade" id="empUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="empUpdateModal" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" required aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" >修改</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" >
                 	<div class="form-group">
-                        <label for="id_update_label" class="col-sm-2 control-label">id</label>
+                        <label for="pid_update_label" class="col-sm-2 control-label">id</label>
                         <div class="col-sm-10">
-                            <p class="form-control-static" id="id_update_label" name="hid"></p>
+                            <p class="form-control-static" id="pid_update_label" required name="pid"></p>
                             <span class="help-block"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="name_update_input" class="col-sm-2 control-label">楼房编号</label>
+                            <label for="pcode_update_input" class="col-sm-2 control-label">欠费编号</label>
                             <div class="col-sm-10">
-                                <input type="text" name="hcode" class="form-control" id="name_update_input" placeholder="请输入这栋楼的名字">
+                                <input type="text" name="pcode" class="form-control" required id="pcode_update_input" placeholder="请输入这栋楼的名字">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                        <label for="address_update_input" class="col-sm-2 control-label">位置</label>
+                        <label for="pmoney_update_input" class="col-sm-2 control-label">缴纳费用</label>
                             <div class="col-sm-10">
-                                <input type="text" name="hsite" class="form-control" id="address_update_input" placeholder="请输入这栋楼的位置">
+                                <input type="text" name="pmoney" class="form-control" required id="pmoney_update_input" placeholder="请输入这栋楼的位置">
                                 <span class="help-block"></span>
                             </div>
                     </div>
                         <div class="form-group">
-                            <label for="area_update_input" class="col-sm-2 control-label">面积</label>
+                            <label for="pinfo_update_input" class="col-sm-2 control-label">欠费信息</label>
                             <div class="col-sm-10">
-                                <input type="text" name="harea" class="form-control" id="area_update_input" placeholder="请输入这栋楼的占地面积">
+                                <input type="text" name="pinfo" class="form-control" required id="pinfo_update_input" placeholder="请输入这栋楼的占地面积">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="height_update_input" class="col-sm-2 control-label">层数</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="hheight" class="form-control" id="height_update_input" placeholder="请输入这栋楼的总层数">
+                            <label for="pstatus_update_input" class="col-sm-2 control-label">欠费状态</label>
+                            <div style="margin-top: 10px" class="col-sm-10" id="pstatus_update_input">
+                                已收取<input type="radio" name="pstatus"  value="已收取">&nbsp;&nbsp;&nbsp;&nbsp;
+                                未收取<input type="radio" name="pstatus"  value="未收取">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="update_save_button">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="update_save_button">保存</button>
             </div>
         </div>
     </div>
@@ -179,30 +146,44 @@
                 <div class="modal-body">
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label for="name_add_input" class="col-sm-2 control-label">楼房编号</label>
+                            <label for="pcode_add_input" class="col-sm-2 control-label">欠费信息编号</label>
                             <div class="col-sm-10">
-                                <input type="text" name="hcode" class="form-control" id="name_add_input" placeholder="请输入这栋楼的名字">
+                                <input type="text" name="pcode" class="form-control" id="pcode_add_input" required placeholder="请输入欠费信息编号">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                        <label for="address_add_input" class="col-sm-2 control-label">位置</label>
+                            <label for="ptime_add_input" class="col-sm-2 control-label">欠费时间</label>
                             <div class="col-sm-10">
-                                <input type="text" name="hsite" class="form-control" id="address_add_input" placeholder="请输入这栋楼的位置">
-                                <span class="help-block"></span>
-                            </div>
-                    </div>
-                        <div class="form-group">
-                            <label for="area_add_input" class="col-sm-2 control-label">面积</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="harea" class="form-control" id="area_add_input" placeholder="请输入这栋楼的占地面积">
+                                <input type="date" name="ptime" class="form-control" required id="ptime_add_input">
                                 <span class="help-block"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="height_add_input" class="col-sm-2 control-label">层数</label>
+                            <label for="pmoney_add_input" class="col-sm-2 control-label">缴收费用</label>
                             <div class="col-sm-10">
-                                <input type="text" name="hheight" class="form-control" id="height_add_input" placeholder="请输入这栋楼的总层数">
+                                <input type="text" name="pmoney" class="form-control" id="pmoney_add_input" required placeholder="请输入缴收费用">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pinfo_add_input" class="col-sm-2 control-label">缴欠费信息</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="pinfo" class="form-control" id="pinfo_add_input" required placeholder="请输入缴欠费信息">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cid_add_input" class="col-sm-2 control-label">费用编号</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="cid" class="form-control" id="cid_add_input" required placeholder="请输入费用编号">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="uid_add_input" class="col-sm-2 control-label">业主编号</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="uid" class="form-control" id="uid_add_input" required placeholder="请输入业主编号">
                                 <span class="help-block"></span>
                             </div>
                         </div>
@@ -295,9 +276,8 @@
             data:"pn=" + pn,
             type:"GET",
             success:function (result) {
-                alert(JSON.stringify(result))
                 build_emps_table(result);
-//                显示分页信息
+                // 显示分页信息
                 build_page_nav(result);
 
             }
@@ -390,9 +370,9 @@
      * 单行删除按钮被按下
     */
     function deleteOneBtnClick(employee) {
-        if (confirm("确认删除【"+employee.hcode+"】的信息吗")) {
+        if (confirm("确认删除【"+employee.pcode+"】的信息吗")) {
             $.ajax({
-                url:"${basePath}/chargeitem/del/" + employee.hid,
+                url:"${basePath}/payinfo/del/" + employee.pid,
                 type:"DELETE",
                 success:function (result) {
                     to_page(curPage);
@@ -404,14 +384,14 @@
     // 编辑按钮 按下
     function editBtnClick(employee) {
         // 将当前信息添加到模态框中
-        $("#id_update_label").text(employee.hid);
-        $("#name_update_input").val(employee.hcode);
-        $("#address_update_input").val(employee.hsite);
-        $("#area_update_input").val(employee.harea);
-        $("#height_update_input").val(employee.hheight);
+        $("#pid_update_label").text(employee.pid);
+        $("#pcode_update_input").val(employee.pcode);
+        $("#pmoney_update_input").val(employee.pmoney);
+        $("#pinfo_update_input").val(employee.pinfo);
+        $("[value="+employee.pstatus+"]").prop("checked",true);
 
         // 将ID保存至更新按钮中
-        $("#update_save_button").attr("hid", employee.hid);
+        $("#update_save_button").attr("pid", employee.pid);
         // 弹出模态对话框
         $("#empUpdateModal").modal({
             backdrop:"static"
@@ -508,7 +488,7 @@
         });
         if ("" != (allName) && confirm("确定要删除【" + allName + "】的信息吗")) {
             $.ajax({
-                url:"${basePath}/chargeitem/del/" + allId,
+                url:"${basePath}/payinfo/del/" + allId,
                 type:"DELETE",
                 success:function() {
                     to_page(curPage);
@@ -544,82 +524,47 @@
             $(ele).next("span").text(text);
         }
     }
-    /**
-     *  前端校验表单
-    **/
 
-    // 名字输入框ajax校验
-    $("#name_add_input").change(function () {
-
-        var name = this.value;
-        $.ajax({
-            url:"${basePath}/chargeitem/validateName",
-            data:"hcode="+name,
-            type:"GET",
-            success:function (result) {
-               	//alert(result.code)
-                if (result.code == 200) {
-                    // 可用
-                    show_validate_msg("#name_add_input", "success", "楼房名可用");
-                    // 名字可用，可以保存信息至数据库
-                    $("#add_save_button").attr("validate_state","success");
-                } else {
-                    show_validate_msg("#name_add_input", "error", "楼房名已存在");
-                    // 名字不可用，不能保存
-                    $("#add_save_button").attr("validate_state","error");
-                }
-            }
-        });
-    });
 
     /**
      *  点击保存按钮，发送ajax请求
      */
     $("#add_save_button").click(function(){
-        // 如果校验失败，直接返回
-
-        // 通过ajax校验名字是否重复,判断validate_state的值是成功还是失败,失败不能保存
-        if ($(this).attr("validate_state") != "success") {
-//            alert($(this).attr("validate_state"));
-            return false;
-        }
-//        alert($("#empAddModal form").serialize());
         $.ajax({
-            url:"${basePath}/chargeitem/save",
+            url:"${basePath}/payinfo/save",
             method:"POST",
             // 序列化的表单数据，通过jQuery的serialize方法
             data:$("#empAddModal form").serialize(),
             success:function (result) {
                	console.log(result);
-
-                if (result.code == 200) {
-//                   关闭模态框
-                    $("#empAddModal").modal('hide');
-//                  跳到首页
-                    to_page(1);
-                } else {
-                    if (undefined != result.msg.extend.err_msg.hcode) {
-                        show_validate_msg("#name_add_input", "error", result.msg.extend.err_msg.hcode);
-                    }
+                if (result.code==200){
+                    success_prompt("添加成功");
+                }else {
+                    fail_prompt("添加失败失败");
                 }
+                $("#empAddModal").modal("hide");
+                to_page(1);
             }
         });
     });
 
     // 修改的更新按钮被按下
     $("#update_save_button").click(function () {
-        var empId = $(this).attr("hid");
+        var pid = $(this).attr("pid");
         $.ajax({
-           url:"${basePath}/chargeitem/update/" + empId,
+           url:"${basePath}/payinfo/update/" + pid,
             type:"PUT",
-            data:$("#empUpdateModal form").serialize(),
+            data:$("#empUpdateModal form").serializeArray(),
             success:function (result) {
                 if (result.code == 200) {
-                    //  关闭模态框
-                    $("#empUpdateModal").modal('hide');
-                    // 跳到修改页
-                    to_page(curPage);
+                    success_prompt("修改成功")
+                }else {
+                    fail_prompt("修改失败")
                 }
+                //  关闭模态框
+                $("#empUpdateModal").modal('hide');
+                // 跳到修改页
+                to_page(curPage);
             }
         });
     })

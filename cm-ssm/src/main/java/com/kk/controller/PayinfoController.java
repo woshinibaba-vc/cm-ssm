@@ -18,7 +18,7 @@ public class PayinfoController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(){
-		return "face";
+		return "admin/payinfo";
 	}
 
 	@GetMapping("/listAll")
@@ -62,16 +62,26 @@ public class PayinfoController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/update/{hid}", method = RequestMethod.PUT)
+	@PutMapping(value = "/update/{pid}")
 	public Msg update(Payinfo house) {
-		payinfoService.updateByPrimaryKey(house);
-		return Msg.success();
+		System.out.println(house);
+		int i = payinfoService.updateByPrimaryKey(house);
+		if (i>0){
+			return Msg.success();
+		}else {
+			return Msg.fail();
+		}
 	}
 	
 	@ResponseBody
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public Msg save(Payinfo house) {
-        payinfoService.insert(house);
-        return Msg.success();
+		System.out.println(house);
+		int i = payinfoService.insert(house);
+		if (i > 0){
+			return Msg.success();
+		}else {
+			return Msg.fail();
+		}
     }
 }

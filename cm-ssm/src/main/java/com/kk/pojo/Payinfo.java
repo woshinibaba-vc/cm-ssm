@@ -1,5 +1,7 @@
 package com.kk.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ public class Payinfo implements Serializable {
     private Integer pid;
 
     private String pcode;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ptime;
 
     private Integer pmoney;
@@ -84,5 +86,19 @@ public class Payinfo implements Serializable {
 
     public void setUid(Integer uid) {
         this.uid = uid;
+    }
+
+    @Override
+    public String toString() {
+        return "Payinfo{" +
+                "pid=" + pid +
+                ", pcode='" + pcode + '\'' +
+                ", ptime=" + ptime +
+                ", pmoney=" + pmoney +
+                ", pinfo='" + pinfo + '\'' +
+                ", pstatus='" + pstatus + '\'' +
+                ", cid=" + cid +
+                ", uid=" + uid +
+                '}';
     }
 }

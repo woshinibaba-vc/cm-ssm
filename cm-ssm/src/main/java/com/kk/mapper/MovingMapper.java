@@ -14,4 +14,5 @@ public interface MovingMapper {
     List<Moving> selectAll();
 
     int updateByPrimaryKey(Moving record);
+
 }

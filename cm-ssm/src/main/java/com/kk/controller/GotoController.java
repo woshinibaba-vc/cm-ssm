@@ -8,7 +8,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class GotoController {
 	@RequestMapping("/login")
-	public String adminLogin() {
+	public String adminLogin(HttpSession session) {
+		session.invalidate();
 		return "admin/login";
 	}
 	@RequestMapping("/admin/index")
@@ -20,7 +21,8 @@ public class GotoController {
 		return "app/index";
 	}
 	@RequestMapping("/applogin")
-	public String appLogin() {
+	public String appLogin(HttpSession session) {
+		session.invalidate();
 		return "app/login";
 	}
 	@RequestMapping("/appreg")
@@ -41,5 +43,10 @@ public class GotoController {
 	@RequestMapping("/face/list")
 	public String faceList() {
 		return "admin/face";
+	}
+
+	@RequestMapping("/")
+	public String index() {
+		return "admin/login";
 	}
 }

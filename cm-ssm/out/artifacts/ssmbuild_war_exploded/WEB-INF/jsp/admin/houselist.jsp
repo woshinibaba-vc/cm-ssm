@@ -57,23 +57,16 @@
             <nav>
                 <ul class="nav">
                     <li><a href="${basePath}/admin/index" class=""><i class="lnr lnr-home"></i> <span>后台桌面</span></a></li>
-                    <li><a href="${basePath}/house/list" class="active"><i class="lnr lnr-dice"></i>
-                        <span>楼房信息</span></a></li>
+                    <li><a href="${basePath}/house/list" class="active"><i class="lnr lnr-dice"></i> <span>楼房信息</span></a></li>
                     <li><a href="${basePath}/user/list" class=""><i class="lnr lnr-user"></i> <span>业主信息</span></a></li>
-                    <li><a href="${basePath}/staff/list" class=""><i class="lnr lnr-user"></i> <span>维修员信息</span></a>
-                    </li>
-                    <li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i>
-                        <span>收费项目</span></a></li>
-                    <li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a>
-                    </li>
-                    <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表
-                    </span></a>
-                    <li><a href="${basePath}/repairinfo/list" class=""><i class="lnr lnr-pencil"></i>
-                        <span>申请维修信息</span></a></li>
-                    <li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i>
-                        <span>维修信息处理</span></a></li>
-                    <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a>
-                    </li>
+                    <li><a href="${basePath}/garage/list" class=""><i class="lnr lnr-user"></i> <span>停车场管理</span></a></li>
+                    <li><a href="${basePath}/chargeitem/list" class=""><i class="lnr lnr-inbox"></i><span>收费项目</span></a></li>
+                    <li><a href="${basePath}/payinfo/list" class=""><i class="lnr lnr-bookmark"></i> <span>缴欠费信息</span></a></li>
+                    <li><a href="${basePath}/checkin/list" class=""><i class="lnr lnr-bookmark"></i> <span>访客登记列表</span></a>
+                    <li><a href="${basePath}/face/list" class=""><i class="lnr lnr-pencil"></i> <span>门禁使用记录</span></a></li>
+                    <li><a href="${basePath}/dorepair/list" class=""><i class="lnr lnr-enter"></i> <span>维修信息处理</span></a></li>
+                    <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区动态信息</span></a></li>
+                    <li><a href="${basePath}/moving/list" class=""><i class="lnr lnr-heart"></i> <span>小区报表</span></a></li>
                 </ul>
             </nav>
         </div>

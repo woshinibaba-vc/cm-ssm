@@ -4,7 +4,6 @@ import com.kk.pojo.Admin;
 import com.kk.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
@@ -23,6 +22,7 @@ public class AdminController {
 	 */
 	@RequestMapping(value = "/login",method = RequestMethod.POST)
 	public String doLogin(String aName,String aPassword, HttpSession session) {
+		session.removeAttribute("msg");
 		//根据管理员名获取管理员信息
 		Admin admin = adminService.getAdminByName(aName);
 		if (admin==null){
@@ -32,6 +32,7 @@ public class AdminController {
 			session.setAttribute("msg","管理员密码输入错误");
 			return "/admin/login";
 		}
+
 		session.setAttribute("admin",admin);
 		return "/admin/index";
 	}

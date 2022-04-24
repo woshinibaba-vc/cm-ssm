@@ -6,7 +6,6 @@ import com.kk.pojo.Msg;
 import com.kk.pojo.Repairinfo;
 import com.kk.pojo.Dorepair;
 import com.kk.pojo.RepairinfoExtend;
-import com.kk.service.IDorepairService;
 import com.kk.service.IRepairinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -23,7 +22,7 @@ import java.util.List;
 @RequestMapping("/repairinfo")
 public class RepairinfoController {
 	@Autowired private IRepairinfoService riService;
-	@Autowired private IDorepairService drService;
+
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -41,7 +40,7 @@ public class RepairinfoController {
 		//连续显示的页数是5页
 		PageInfo<RepairinfoExtend> pageInfo = new PageInfo<>(users, 5);
 		model.addAttribute("pageInfo", pageInfo);
-		return "face";
+		return "admin/dorepairlist";
 	}
 	
 	/**
@@ -85,7 +84,7 @@ public class RepairinfoController {
         dorepair.setRid(rid);
         dorepair.setSid(102);
         System.out.println(dorepair);
-        System.out.println("结果"+drService.insert(dorepair));
+        //System.out.println("结果"+drService.insert(dorepair));
         return Msg.success();
     }
 }

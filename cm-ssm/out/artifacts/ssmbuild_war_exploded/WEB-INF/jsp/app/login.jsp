@@ -21,7 +21,7 @@
 String msg = (String)request.getAttribute("msg");
 if(msg != null){
 	session.invalidate();
-	out.print("<script>alert('"+msg+"');</script>");
+//	out.print("<script>alert('"+msg+"');</script>");
 }
 
 %>
@@ -50,7 +50,7 @@ if(msg != null){
 									<br>
 								</div>
 
-								<button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+								<button type="submit" onclick="return isImage()" class="btn btn-primary btn-lg btn-block">登录</button>
 								
 							</form>
 						</div>
@@ -68,10 +68,83 @@ if(msg != null){
 	</div>
 	<!-- END WRAPPER -->
 	<script>
+		$(function (){
+			var msg = "${msg}"
+			if (msg!=="" && msg!=null){
+				fail_prompt(msg);
+				sessionStorage.removeItem(msg);
+			}
+		})
+
 		function changeCode(){
 			var img = document.getElementById("scode");
 			img.src = "${basePath}/image?time="+new Date().getMilliseconds();
 		}
+
+		function isImage(){
+			if ($("#signin-yzm").val()==null ||$("#signin-yzm").val()==""){
+				fail_prompt("请输入验证码")
+				return(false);
+			}else {
+				$.ajax({
+					url:"${basePath}/isCode",
+					data:{"code":$("#signin-yzm").val()},
+					success(data){
+						if (data==true){
+							$("#wrapper form").submit();
+							return(true);
+
+						}else {
+							$("#signin-yzm").val("");
+							fail_prompt("验证码有误，请重新输入")
+							return(false);
+						}
+					}
+				})
+				return(false);
+			}
+		}
+
+		/**
+		 * 弹出式提示框，默认1.2秒自动消失
+		 * @param message 提示信息
+		 * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+		 * @param time 消失时间
+		 */
+		var prompt = function (message, style, time)
+		{
+			style = (style === undefined) ? 'alert-success' : style;
+			time = (time === undefined) ? 1200 : time;
+			$('<div id="promptModal">')
+					.appendTo('body')
+					.addClass('alert '+ style)
+					.css({"display":"block",
+						"z-index":99999,
+						"left":($(document.body).outerWidth(true) - 120) / 2,
+						// "top":($(window).height() - 45) / 2,
+						"top":0,
+						"position": "absolute",
+						"padding": "20px",
+						"border-radius": "5px"})
+					.html(message)
+					.show()
+					.delay(time)
+					.fadeOut(10,function(){
+						$('#promptModal').remove();
+					});
+		};
+
+		// 成功提示
+		var success_prompt = function(message, time)
+		{
+			prompt(message, 'alert-success', time);
+		};
+
+		// 失败提示
+		var fail_prompt = function(message, time)
+		{
+			prompt(message, 'alert-danger', time);
+		};
 	</script>
 </body>
 </html>

@@ -18,7 +18,7 @@
     delete from user
     where uId = #{uid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.kk.pojo.User">
+  <insert id="insert" parameterType="com.kk.pojo.User" >
     insert into user (uId, uCode, uName, 
       uPwd, uSex, uPhone, uStartTime, 
       uPeopleNum, uHouseCode, utheme, 
@@ -46,7 +46,8 @@
     from user
     where uId = #{uid,jdbcType=INTEGER}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
+
+  <select id="selectAll" resultMap="BaseResultMap" >
     select uId, uCode, uName, uPwd, uSex, uPhone, uStartTime, uPeopleNum, uHouseCode, 
     utheme, hId
     from user
